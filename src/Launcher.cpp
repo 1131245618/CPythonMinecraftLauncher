@@ -6,11 +6,6 @@
 
 struct LauncherInput inArgs;
 
-//int main(int argc, char* argv[])
-//{
-//	start(argc - 2, argv + 2);
-//}
-
 void start(int argc, char* argv[])
 {
 
@@ -258,8 +253,10 @@ void setOptifine(::std::string& MC_args, const LauncherInput& inArgs, const Json
 bool ZipUnpress(const char* src, const char* dst)
 {
 	if (!existFile(src))
+	{
 		::std::cerr << "[WARN] source file(" << src << ") doesn't exist\n";
 		return false;
+	}
 	HZIP zip = OpenZip(charToWchar(src), NULL);
 	SetUnzipBaseDir(zip, charToWchar(dst));
 	ZIPENTRY ze;
@@ -271,12 +268,13 @@ bool ZipUnpress(const char* src, const char* dst)
 		UnzipItem(zip, i, ze.name);
 	}
 	CloseZip(zip);
+
 	return true;
 }
 
 wchar_t* charToWchar(const char* src)
 {
-	size_t len = std::strlen(src);
+	size_t len = std::strlen(src) + 1;
 	wchar_t* dst = new wchar_t[len];
 	mbstowcs_s(nullptr, dst, len, src, _TRUNCATE);
 	return dst;

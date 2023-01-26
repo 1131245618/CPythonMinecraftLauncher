@@ -29,17 +29,14 @@ void py_start(py::list argv)
     delete[] c_argv;
 }
 
-bool py_existFile(py::object filename)
+bool py_existFile(py::str filename)
 {
-    ::std::string _filename = filename.cast<::std::string>();
-    return existFile(_filename.c_str());
+    return existFile(filename.cast<::std::string>().c_str());
 }
 
-bool py_ZipUnpress(py::object src, py::object dst)
+bool py_ZipUnpress(py::str src, py::str dst)
 {
-    ::std::string _src = src.cast<::std::string>();
-    ::std::string _dst = dst.cast<::std::string>();
-    return ZipUnpress(_src.c_str(), _dst.c_str());
+    return ZipUnpress(src.cast<::std::string>().c_str(), dst.cast<::std::string>().c_str());
 }
 
 PYBIND11_MODULE(MinecraftLauncher, m) {
