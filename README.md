@@ -5,7 +5,7 @@ Libraries: pybind11, jsoncpp, zip
 
 ### Usage
 
-import the .pyd in output directory
+import the pyd file located in the output directory
 
 then use it.
 
