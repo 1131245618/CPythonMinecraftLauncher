@@ -3,13 +3,13 @@
 
 Libraries: pybind11, jsoncpp, zip
 
-### Usage
+### Usage:
 
 import the pyd file located in the output directory
 
-then use it.
+then use it
 
-##### example:
+##### Example:
 
 ```python
 import MinecraftLauncher
