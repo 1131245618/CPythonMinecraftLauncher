@@ -86,7 +86,7 @@ void launcher(const LauncherInput& inArgs)
 	}
 
 	::std::string JVMSetting = setJVM(inArgs, json_value);
-	::std::string MCSetting = setArguements(inArgs, json_value);
+	::std::string MCSetting = setArguments(inArgs, json_value);
 
 	::std::string cmd = JVMSetting + " " + MCSetting;
 
@@ -169,7 +169,7 @@ void launcher(const LauncherInput& inArgs)
 }
 
 
-::std::string setArguements(const LauncherInput& inArgs, const Json::Value json_value)
+::std::string setArguments(const LauncherInput& inArgs, const Json::Value json_value)
 {
 	::std::string MC_args = json_value["mainClass"].asString();
 	MC_args += " ";

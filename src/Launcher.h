@@ -32,7 +32,7 @@ wchar_t* charToWchar(const char* src);
 bool existVersion(const char* version, const char* mcdir);
 void launcher(const LauncherInput& inArgs);
 ::std::string setJVM(const LauncherInput& inArgs, const Json::Value& json_value);
-::std::string setArguements(const LauncherInput& inArgs, const Json::Value json_value);
+::std::string setArguments(const LauncherInput& inArgs, const Json::Value json_value);
 ::std::string replace(::std::string str, const ::std::string& from, const ::std::string& to);
 ::std::string domainToPath(const ::std::string& domain);
 ::std::vector<::std::string> split(const ::std::string& _str, const ::std::string& pattern);
