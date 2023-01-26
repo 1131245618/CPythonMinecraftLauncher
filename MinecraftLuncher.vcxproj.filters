@@ -137,5 +137,6 @@
       <Filter>头文件</Filter>
     </None>
     <None Include="res\demo.json" />
+    <None Include="src\start.py" />
   </ItemGroup>
 </Project>

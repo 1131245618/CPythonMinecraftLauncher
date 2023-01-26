@@ -29,13 +29,25 @@ void py_start(py::list argv)
     delete[] c_argv;
 }
 
+bool py_existFile(py::object filename)
+{
+    return existFile(filename.cast<::std::string>().c_str());
+}
+
+bool py_ZipUnpress(py::object src, py::object dst)
+{
+    return ZipUnpress(src.cast<::std::string>().c_str(), dst.cast<::std::string>().c_str());
+}
+
 PYBIND11_MODULE(MinecraftLauncher, m) {
     m.doc() = "pybind11 Minecraft Luncher plugin"; // optional module docstring
 
+    py::class_<LauncherInput>(m, "LauncherInput")
+        .def(py::init<>());
+
     m.def("start", &py_start, "start a Minecraft version", py::arg("argv"));
-    //m.def("existFile", &existFile, "start a Minecraft version");
-    //m.def("ZIPUnpress", &ZIPUnpress, "start a Minecraft version");
-    //m.def("existVersion", &existVersion, "start a Minecraft version");
+    m.def("existFile", &py_existFile, "start a Minecraft version", py::arg("filename"));
+    m.def("ZipUnpress", &py_ZipUnpress, "unpress zip file to path", py::arg("src"), py::arg("dst"));
+    m.def("help", &help);
     m.def("launcher", &launcher, "start a Minecraft version", py::arg("input"));
-    //m.def("setJVM", &setJVM, "start a Minecraft version");
 }

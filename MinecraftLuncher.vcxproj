@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\demo.json" />
+    <None Include="src\start.py" />
     <None Include="src\vendor\lib_json\json_valueiterator.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

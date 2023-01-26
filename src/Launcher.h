@@ -27,7 +27,7 @@ void setGame(::std::string& MC_args, const LauncherInput& inArgs, const Json::Va
 void setFabric(::std::string& MC_args, const LauncherInput& inArgs, const Json::Value& json_value);
 void setForge(::std::string& MC_args, const LauncherInput& inArgs, const Json::Value& json_value);
 void setOptifine(::std::string& MC_args, const LauncherInput& inArgs, const Json::Value& json_value);
-bool ZIPUnpress(const char* src, const char* dst);
+bool ZipUnpress(const char* src, const char* dst);
 wchar_t* charToWchar(const char* src);
 bool existVersion(const char* version, const char* mcdir);
 void launcher(const LauncherInput& inArgs);

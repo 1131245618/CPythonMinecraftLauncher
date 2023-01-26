@@ -70,7 +70,7 @@ void launcher(const LauncherInput& inArgs)
 					::std::string dest_path, source_path;
 					dest_path = ::std::format("{0}\\versions\\{1}\\{1}-natives", inArgs.mcdir, inArgs.version);
 					source_path = ::std::format("{0}\\libraries\\{1}", inArgs.mcdir, native["path"].asCString());
-					ZIPUnpress(source_path.c_str(), dest_path.c_str());
+					ZipUnpress(source_path.c_str(), dest_path.c_str());
 				}
 				else if (native.asString().compare("classifiers") == 0)
 				{
@@ -79,7 +79,7 @@ void launcher(const LauncherInput& inArgs)
 						::std::string dest_path, source_path;
 						dest_path = ::std::format("{0}\\versions\\{1}", inArgs.mcdir, native["path"].asCString());
 						source_path = ::std::format("{0}\\libraries\\{1}", inArgs.mcdir, lib["path"].asCString());
-						ZIPUnpress(source_path.c_str(), dest_path.c_str());
+						ZipUnpress(source_path.c_str(), dest_path.c_str());
 					}
 				}
 			}
@@ -255,7 +255,7 @@ void setOptifine(::std::string& MC_args, const LauncherInput& inArgs, const Json
 
 }
 
-bool ZIPUnpress(const char* src, const char* dst)
+bool ZipUnpress(const char* src, const char* dst)
 {
 	if (!existFile(src))
 		::std::cerr << "[WARN] source file(" << src << ") doesn't exist\n";
