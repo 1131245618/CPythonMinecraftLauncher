@@ -21,7 +21,6 @@ void py_start(py::list argv)
     for (int i = 0; i < argc; ++i)
     {
         c_argv[i] = copyCString(argv[i].cast<std::string>().c_str());
-        std::cout << c_argv[i] << std::endl;
     }
 
     start(argc, c_argv);
