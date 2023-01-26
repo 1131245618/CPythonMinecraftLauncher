@@ -72,9 +72,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)include;$(ProjectDir)src\vendor;$(ProjectDir)src\vendor\zip_util;D:\ProgramData\Anaconda3\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(ProjectDir)src\vendor;$(ProjectDir)src\vendor\zip_util;$(PYTHONHOME)\include;$(IncludePath)</IncludePath>
     <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>D:\ProgramData\Anaconda3\libs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(PYTHONHOME)\libs;$(LibraryPath)</LibraryPath>
     <TargetExt>.pyd</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
