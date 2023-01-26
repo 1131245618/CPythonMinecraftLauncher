@@ -11,7 +11,7 @@ then use it.
 
 ##### example:
 
-'''python
+```python
 import MinecraftLauncher
 
 if __name__ == "__main__":
@@ -28,4 +28,4 @@ if __name__ == "__main__":
         ]
     # start game
     MinecraftLauncher.start(argv)
-'''
+```
